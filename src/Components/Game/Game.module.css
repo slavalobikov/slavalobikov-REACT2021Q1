@@ -1,0 +1,115 @@
+.game {
+    height: calc(100vh - 40px);
+    /*
+    background-color: rebeccapurple;
+    */
+
+}
+
+.darkback {
+    background-color: #282c34;
+}
+.lightback {
+    background-color: #fafafa;
+}
+
+.goldBack {
+    background-color: darkgrey;
+}
+
+.fullscreen {
+    cursor: pointer;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: 1.5em;
+    transition: 0.3s;
+    z-index:99;
+
+
+}
+
+.fullscreen:hover {
+    position: absolute;
+    top:0.5em;
+    right:0.5em;
+    font-size: 2em;
+    transition: 0.3s;
+}
+
+.setting {
+    cursor: pointer;
+    position: absolute;
+    top:1em;
+    left: 1em;
+    font-size: 1.5em;
+    transition: 0.3s;
+    z-index:99;
+}
+
+.setting:hover {
+    transition: 0.3s;
+    position: absolute;
+    top:0.5em;
+    left:0.5em;
+    font-size: 2em;
+}
+
+.darckIcon {
+    color: #fafafa;
+}
+
+.lightIcon {
+    color:black;
+}
+
+.goldIcon {
+    color: gold;
+}
+
+.music {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #fafafa;
+    position: absolute;
+    top:1em;
+    left: 3em;
+    z-index:99;
+}
+
+.nomus {
+    position: relative;
+
+    width: 20px;
+    height: 3px;
+    transform: rotate(0deg) skewY(-60deg);
+    top: -17px;
+
+
+}
+
+.darckIconMusic .nomus {
+    border: solid 2px #fafafa;
+
+}
+
+.goldIconMusic {
+    color: gold
+}
+
+.goldIconMusic .nomus {
+    border: solid 2px gold;
+}
+
+.lightIconMusic {
+    color: black;
+}
+
+.lightIconMusic .nomus {
+    border: solid 2px black;
+}
+.hidden {
+    display: none;
+}
+
+

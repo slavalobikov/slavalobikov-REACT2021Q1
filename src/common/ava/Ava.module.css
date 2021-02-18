@@ -1,0 +1,15 @@
+.ava {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.stone img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}

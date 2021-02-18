@@ -1,0 +1,31 @@
+.setting {
+    background-color: violet;
+    height:calc(100vh - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cent {
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.01), 0 25px 40px;
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    background-color:#fafafa ;
+}
+
+.h1 {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex button {
+    margin-top: 25px;
+}
