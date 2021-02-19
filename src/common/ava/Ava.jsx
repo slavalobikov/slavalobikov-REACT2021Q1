@@ -5,13 +5,15 @@ import scissors from './../../common/img/nozni.svg';
 import paper from './../../common/img/bumaga.png';
 
 import s from './Ava.module.css'
+import {LoadingOutlined} from '@ant-design/icons';
+
 
 const Ava = ({number}) => {
     return (
 
         <div >
             {(number === 0) && <span className={s.ava}>
-                Ожидает
+                <LoadingOutlined className={s.icon} />
             </span>}
             {(number === 1) && <span className={s.stone}>
                 <img src={stone} alt="stone"/>

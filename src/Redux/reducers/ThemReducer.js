@@ -1,7 +1,9 @@
 const SET_THEME = 'SET_THEME/ThemReducer';
+const SET_LANG = 'SET_LANG/ThemReducer'
 
 let initialState = {
     theme: 'dark',
+    lang: 'ru',
 }
 
 const ThemReducer = (state = initialState,action) => {
@@ -12,11 +14,19 @@ const ThemReducer = (state = initialState,action) => {
                 ...state,
                 theme: action.theme
             }
+        case SET_LANG: {
+            return {
+                ...state,
+                lang: action.lang
+            }
+        }
+
 
         default: return state
     }
 }
 
 export const setTheme = (theme) => ({type:SET_THEME, theme})
+export const setLang = (lang) => ({type:SET_LANG, lang})
 
 export default ThemReducer;

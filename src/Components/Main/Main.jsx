@@ -8,28 +8,46 @@ import paper from './../../common/img/bumaga.png';
 import GamePlace from "../GamePlece/GamePlace";
 
 
-const Main = ({ name,statusWin, setMyNumber, myNumber, setComputerNumber, setZeroNumber, countYou, countComputer}) => {
+const Main = ({lang, name,setMus,statusWin, setMyNumber, myNumber, setComputerNumber, setZeroNumber, countYou, countComputer}) => {
 
     return (
         <div>
 
         <div className={s.name}>Ваше имя: {name}</div>
             <div className={s.points}>
-                <div className={s.point}>Ваши очки: {countYou}</div>
-                <div className={s.point}>Очки компьютера: {countComputer}</div>
+                <div className={s.point}>
+                    {lang === 'ru' && <span>Ваши очки:</span>}
+                    {lang === 'eng' && <span>Your points:</span>}
+                    {countYou}</div>
+                <div className={s.point}>
+                    {lang === 'ru' && <span>Очки компьютера</span>}
+                    {lang === 'eng' && <span>Computer points</span>}
+                    : {countComputer}</div>
             </div>
             { statusWin === 'win' && <div className={s.mod}>
-                <h2 className={s.h2}>В этом ходу вы победили :)</h2>
+                <h2 className={s.h2}>
+                    {lang === 'ru' && <span>В этом ходу вы победили :)</span>}
+                    {lang === 'eng' && <span>You win this turn :)</span>}
+                </h2>
             </div>}
             {statusWin === 'lose'&& <div className={s.modtwo}>
-                <h2 className={s.h2}>В этом ходу вы проиграли :(</h2>
+                <h2 className={s.h2}>
+                    {lang === 'ru' && <span>В этом ходу вы проиграли :(</span>}
+                    {lang === 'eng' && <span>You lost this turn :(</span>}
+
+                </h2>
             </div>}
             {statusWin === 'noWinNoLose' && <div className={s.modthree}>
-                <h2 className={s.h2}>Ничья :|</h2>
+                <h2 className={s.h2}>
+                    {lang === 'ru' && <span>Ничья :|</span>}
+                    {lang === 'eng' && <span>This turn is a draw :|</span>}
+                </h2>
 
             </div>}
             <GamePlace setComputerNumber={setComputerNumber}
+                       lang={lang}
                        setMyNumber={setMyNumber}
+                       setMus={setMus}
                        setZeroNumber={setZeroNumber}
                        myNumber={myNumber}
             />
@@ -37,7 +55,10 @@ const Main = ({ name,statusWin, setMyNumber, myNumber, setComputerNumber, setZer
 
             <div className={s.containerbox}>
                 <div className={s.knbCon}>
-                    <div className={s.visability}><h3 className={s.right}>Камень</h3></div>
+                    <div className={s.visability}><h3 className={s.right}>
+                        {lang === 'ru' && <span>Камень</span>}
+                        {lang === 'eng' && <span>Rock</span>}
+                    </h3></div>
                     <img  onClick={() => {
                         if (myNumber !== 0) {
                             return
@@ -46,7 +67,10 @@ const Main = ({ name,statusWin, setMyNumber, myNumber, setComputerNumber, setZer
                     }} src={stone} alt="stone"/>
                 </div>
                 <div className={s.knbCon}>
-                    <div className={s.visability}><h3 className={s.right}>Ножницы</h3></div>
+                    <div className={s.visability}><h3 className={s.right}>
+                        {lang === 'ru' && <span>Ножницы</span>}
+                        {lang === 'eng' && <span>Scissors</span>}
+                    </h3></div>
 
                     <img onClick={() => {
                         if (myNumber !== 0) {
@@ -56,7 +80,10 @@ const Main = ({ name,statusWin, setMyNumber, myNumber, setComputerNumber, setZer
                     }} src={scissors} alt="scissors"/>
                 </div>
                 <div className={s.knbCon}>
-                    <div className={s.visability}><h3 className={s.right}>Бумага</h3></div>
+                    <div className={s.visability}><h3 className={s.right}>
+                        {lang === 'ru' && <span>Бумага</span>}
+                        {lang === 'eng' && <span>Paper</span>}
+                    </h3></div>
 
                     <img onClick={() => {
                         if (myNumber !== 0) {

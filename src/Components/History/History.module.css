@@ -12,6 +12,21 @@
     align-items: center;
 }
 
+.probel {
+    margin-left: 3px;
+}
+
+.fl {
+    display: flex;
+    justify-content: space-between;
+}
+
+.divContainer {
+    margin-top: -30px;
+    height: 400px;
+    overflow: auto;
+}
+
 .h1{
     text-align: center;
 }

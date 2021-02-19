@@ -14,12 +14,15 @@ import ReactPlayer from "react-player";
 import s from './Game.module.css'
 import Setting from "../Setting/Setting";
 import MainContainer from "../../Container/MainContainer/MainContainer";
-import {deleteAllStats, setMyNumber} from "../../Redux/reducers/StatisticReducer";
-import {setStatusWin} from "../../Redux/reducers/CountNumberReducer";
+
 
 
 
 const Game = (props) => {
+
+    const [mus, setMus] = useState(false);
+
+    console.log('statistics', props.statistics)
 
 
 
@@ -75,15 +78,22 @@ const Game = (props) => {
             [s.lightback]: props.theme === 'light',
             [s.goldBack]: props.theme === 'gold',
         })} tabIndex="0">
+            <div className={s.hidden}>
+                {isMusic && <ReactPlayer url={'https://freesound.org/data/previews/401/401736_7744890-lq.mp3'}
+                                         playing={mus}
+                                         volume={props.voluemSignal}
+                                         onEnded={() => setMus(false)}
+                                         controls={true}  />}
+            </div>
 
 
             <div className={s.hidden}>
                 <ReactPlayer  controls={true}
-                              loop={true}
                               volume={props.voluem}
                               playing={isMusic}
                               url={'https://a1.dlshare.net/sdb/13/c8/65/67168033_99902550.mp3?name=adriano-chelentano-confessa.mp3&id=232631'} />
             </div>
+
 
 
             {!isFullscreen && <div onClick={(e)=> {fullscreen()}}
@@ -126,12 +136,17 @@ const Game = (props) => {
 
 
             <Route path={'/setting'} render={() => <Setting voluem={props.voluem}
+                                                            setLang={props.setLang}
+                                                            lang={props.lang}
+                                                            statistics={props.statistics}
+                                                            setVoluemSignal={props.setVoluemSignal}
                                                             setStatusWin={props.setStatusWin}
+                                                            voluemSignal={props.voluemSignal}
                                                             setVoluem={props.setVoluem}
                                                             deleteAllStats={props.deleteAllStats}
                                                             setTheme={props.setTheme} />} />
             <Route path={'/'} exact render={() => <MainContainer
-                name={props.name} isMusic={isMusic} setIsMusic={setIsMusic} />} />
+                name={props.name} lang={props.lang} setMus={setMus} isMusic={isMusic} setIsMusic={setIsMusic} />} />
 
 
 

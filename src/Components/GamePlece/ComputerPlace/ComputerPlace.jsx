@@ -5,16 +5,19 @@ import {connect} from "react-redux";
 import {
     addComputerChoose,
     AddCountComputer,
-    AddCountYou,
+    AddCountYou, addMove,
     addMoveHistory,
     addYouChoose
 } from "../../../Redux/reducers/StatisticReducer";
 import {setStatusWin} from "../../../Redux/reducers/CountNumberReducer";
 
 const ComputerPlace = ({myNumber,
+                           addMove,
                            computerNumber,
                            addComputerChoose,
                            AddCountComputer,
+                           setMus,
+                           lang,
                            setZeroNumber,
                            addYouChoose,
                            addMoveHistory,
@@ -29,6 +32,7 @@ const ComputerPlace = ({myNumber,
         setTimeout(() => {
             setZeroNumber();
             AddCountYou();
+            setMus(true)
             setStatusWin('win')
             addMoveHistory()
         }, 1000)
@@ -53,6 +57,7 @@ const ComputerPlace = ({myNumber,
 
 
     if (myNumber === 1 && computerNumber === 0) {
+        addMove()
         addYouChoose(1)
         if (0.33 > computerRandomNumber) {
             addComputerChoose(1)
@@ -70,6 +75,7 @@ const ComputerPlace = ({myNumber,
         }
     }
     if (myNumber === 2 && computerNumber === 0) {
+        addMove()
         addYouChoose(2)
         if (0.33 > computerRandomNumber) {
             //ножницы против камня
@@ -92,6 +98,7 @@ const ComputerPlace = ({myNumber,
         }
     }
     if (myNumber === 3 && computerNumber === 0) {
+        addMove()
         addYouChoose(3)
         if (0.33 > computerRandomNumber) {
             //бумага против камня
@@ -114,7 +121,10 @@ const ComputerPlace = ({myNumber,
 
     return (
         <div>
-            <h2>компьютер</h2>
+            <h2>
+                {lang === 'ru' && <span>Компьютер</span>}
+                {lang === 'eng' && <span>Computer</span>}
+            </h2>
             <div>
                 <Ava number={computerNumber} />
             </div>
@@ -133,6 +143,7 @@ export default connect(mapStateToProps, {
     AddCountYou,
     AddCountComputer,
     addYouChoose,
+    addMove,
     setStatusWin,
     addMoveHistory,
     addComputerChoose,

@@ -3,7 +3,8 @@ const ADD_COUNT_COMPUTER = 'ADD_COUNT_COMPUTER/StatisticReducer';
 const ADD_MOVE_IN_HISTORY = 'ADD_MOVE_IN_HISTORY/StatisticReducer';
 const ZERO_COUNT_ALL = 'ZERO_COUNT_ALL/StatisticReducer';
 const ADD_YOU_CHOOCE = 'ADD_YOU_CHOOCE/StatisticReducer';
-const ADD_COMPUTER_CHOOSE = 'ADD_COMPUTER_CHOOSE/StstisticReducer'
+const ADD_COMPUTER_CHOOSE = 'ADD_COMPUTER_CHOOSE/StstisticReducer';
+const ADD_MOVE = 'ADD_MOVE/StatisticReducer'
 
 let initialState = {
     name: 'New Player',
@@ -60,8 +61,15 @@ const StatisticsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 countYou: 0,
+                move:0,
                 countComputer:0,
                 statistics: []
+            }
+        }
+        case ADD_MOVE: {
+            return {
+                ...state,
+                move:[Number(state.move) + 1]
             }
         }
 
@@ -75,5 +83,6 @@ export const deleteAllStats = () => ({type: ZERO_COUNT_ALL});
 export const addYouChoose = (choose) => ({type:ADD_YOU_CHOOCE, choose});
 export const addComputerChoose = (choose) => ({type:ADD_COMPUTER_CHOOSE, choose})
 export const addMoveHistory = () => ({type: ADD_MOVE_IN_HISTORY})
+export const addMove = () => ({type: ADD_MOVE})
 
 export default StatisticsReducer;
