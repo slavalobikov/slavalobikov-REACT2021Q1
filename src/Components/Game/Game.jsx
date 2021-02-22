@@ -14,6 +14,7 @@ import ReactPlayer from "react-player";
 import s from './Game.module.css'
 import Setting from "../Setting/Setting";
 import MainContainer from "../../Container/MainContainer/MainContainer";
+import {setZeroTwoHistory} from "../../Redux/reducers/StatisticTwoReducer";
 
 
 
@@ -21,8 +22,6 @@ import MainContainer from "../../Container/MainContainer/MainContainer";
 const Game = (props) => {
 
     const [mus, setMus] = useState(false);
-
-    console.log('statistics', props.statistics)
 
 
 
@@ -85,16 +84,12 @@ const Game = (props) => {
                                          onEnded={() => setMus(false)}
                                          controls={true}  />}
             </div>
-
-
             <div className={s.hidden}>
                 <ReactPlayer  controls={true}
                               volume={props.voluem}
                               playing={isMusic}
                               url={'https://a1.dlshare.net/sdb/13/c8/65/67168033_99902550.mp3?name=adriano-chelentano-confessa.mp3&id=232631'} />
             </div>
-
-
 
             {!isFullscreen && <div onClick={(e)=> {fullscreen()}}
                    className={cn(s.fullscreen,{
@@ -113,7 +108,7 @@ const Game = (props) => {
 
                 })}><ArrowLeftOutlined /></div>
             </NavLink>}
-            {props.location.pathname === '/'&& <NavLink to={'/setting'}>
+            {props.location.pathname === '/' && <NavLink to={'/setting'}>
                 <div className={cn(s.setting,{
                         [s.darckIcon]: props.theme === 'dark',
                         [s.lightIcon]: props.theme === 'light',
@@ -138,7 +133,11 @@ const Game = (props) => {
             <Route path={'/setting'} render={() => <Setting voluem={props.voluem}
                                                             setLang={props.setLang}
                                                             lang={props.lang}
+                                                            stata={props.stata}
+                                                            isOne={props.isOne}
+                                                            setIsOne={props.setIsOne}
                                                             statistics={props.statistics}
+                                                            setZeroTwoHistory={props.setZeroTwoHistory}
                                                             setVoluemSignal={props.setVoluemSignal}
                                                             setStatusWin={props.setStatusWin}
                                                             voluemSignal={props.voluemSignal}

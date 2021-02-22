@@ -2,7 +2,7 @@ const SET_THEME = 'SET_THEME/ThemReducer';
 const SET_LANG = 'SET_LANG/ThemReducer'
 
 let initialState = {
-    theme: 'dark',
+    theme: 'light',
     lang: 'ru',
 }
 

@@ -6,14 +6,25 @@ import stone from './../../common/img/stone.png';
 import scissors from './../../common/img/nozni.svg';
 import paper from './../../common/img/bumaga.png';
 import GamePlace from "../GamePlece/GamePlace";
+import GameTwoPlace from "../GameTwoPlace/GameTwoPlace";
 
 
-const Main = ({lang, name,setMus,statusWin, setMyNumber, myNumber, setComputerNumber, setZeroNumber, countYou, countComputer}) => {
-
+const Main = ({lang,
+                  computerCountTwo,
+                  youCountTwo,
+                  setMus,
+                  statusWin,
+                  setMyNumber,
+                  myNumber,
+                  setComputerNumber,
+                  setZeroNumber,
+                  countYou,
+                  isOne,
+                  countComputer}) => {
     return (
         <div>
 
-        <div className={s.name}>Ваше имя: {name}</div>
+            {isOne && <span>
             <div className={s.points}>
                 <div className={s.point}>
                     {lang === 'ru' && <span>Ваши очки:</span>}
@@ -50,7 +61,42 @@ const Main = ({lang, name,setMus,statusWin, setMyNumber, myNumber, setComputerNu
                        setMus={setMus}
                        setZeroNumber={setZeroNumber}
                        myNumber={myNumber}
-            />
+            /> </span>}
+            {!isOne && <span>
+            <span className={s.points}>
+                <div className={s.point}>
+                    {lang === 'ru' && <span>Ваши очки:</span>}
+                    {lang === 'eng' && <span>Your points:</span>}
+                    {youCountTwo}</div>
+                <div className={s.point}>
+                    {lang === 'ru' && <span>Очки компьютера</span>}
+                    {lang === 'eng' && <span>Computer points</span>}
+                    : {computerCountTwo}</div>
+            </span>
+                { statusWin === 'win' && <div className={s.mod}>
+                    <h2 className={s.h2}>
+                        {lang === 'ru' && <span>В этом ходу вы победили :)</span>}
+                        {lang === 'eng' && <span>You win this turn :)</span>}
+                    </h2>
+                </div>}
+                {statusWin === 'lose'&& <div className={s.modtwo}>
+                    <h2 className={s.h2}>
+                        {lang === 'ru' && <span>В этом ходу вы проиграли :(</span>}
+                        {lang === 'eng' && <span>You lost this turn :(</span>}
+
+                    </h2>
+                </div>}
+                {statusWin === 'noWinNoLose' && <div className={s.modthree}>
+                    <h2 className={s.h2}>
+                        {lang === 'ru' && <span>Ничья :|</span>}
+                        {lang === 'eng' && <span>This turn is a draw :|</span>}
+                    </h2>
+
+                </div>}
+                <GameTwoPlace setMus={setMus} myNumber={myNumber} lang={lang} />
+                </span>
+
+            }
 
 
             <div className={s.containerbox}>

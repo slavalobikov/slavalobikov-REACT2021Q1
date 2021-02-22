@@ -17,3 +17,15 @@
 .icon {
     font-size: 3em;
 }
+
+@media (max-width: 775px) {
+    .ava {
+        width:150px;
+        height: 150px;
+    }
+
+    .stone img {
+        width:150px;
+        height: 150px;
+    }
+}

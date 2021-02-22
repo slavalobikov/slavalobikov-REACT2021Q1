@@ -8,6 +8,8 @@ import ThemReducer from "./reducers/ThemReducer";
 import MusicReducer from "./reducers/MusicReducer";
 import StatisticsReducer from "./reducers/StatisticReducer";
 import CountNumberReducer from "./reducers/CountNumberReducer";
+import OneTwoReducer from "./reducers/OneTwoReducer";
+import StatisticTwoReducer from "./reducers/StatisticTwoReducer";
 
 
 let reducers = combineReducers({
@@ -15,20 +17,24 @@ let reducers = combineReducers({
     MusicReducer,
     StatisticsReducer,
     CountNumberReducer,
+    OneTwoReducer,
+    StatisticTwoReducer,
 });
 
 const persistConfig = {
     key: 'ReactEPAMSlavalobikov',
     storage: storage,
-    whitelist: ['ThemReducer', 'MusicReducer', 'StatisticsReducer'] // which reducer want to store
+    whitelist: ['ThemReducer',
+        'OneTwoReducer',
+        'MusicReducer',
+        'StatisticsReducer',
+        'StatisticTwoReducer'] // which reducer want to store
 };
 
 const pReducer = persistReducer(persistConfig, reducers);
 
 
-/*
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
-*/
+
 const middleware = applyMiddleware(thunk);
 const store = createStore(pReducer, middleware);
 const persistor = persistStore(store);

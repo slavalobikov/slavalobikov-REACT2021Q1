@@ -8,6 +8,8 @@ import {setLang, setTheme} from "../../Redux/reducers/ThemReducer";
 import {setVoluem, setVoluemSignal} from "../../Redux/reducers/MusicReducer";
 import {setMyNumber, setStatusWin} from "../../Redux/reducers/CountNumberReducer";
 import {AddCountYou, deleteAllStats} from "../../Redux/reducers/StatisticReducer";
+import {setIsOne} from "../../Redux/reducers/OneTwoReducer";
+import {setZeroTwoHistory} from "../../Redux/reducers/StatisticTwoReducer";
 
 const GameContainer = (props) => {
 
@@ -22,6 +24,10 @@ const mapStateToProps = (state) => {
         voluem: state.MusicReducer.voluem,
         name:state.StatisticsReducer.name,
         myNumber: state.CountNumberReducer.myNumber,
+        isOne: state.OneTwoReducer.isOne,
+        stata:state.StatisticTwoReducer.stata,
+
+
         statistics: state.StatisticsReducer.statistics,
         voluemSignal: state.MusicReducer.voluemSignal,
         lang: state.ThemReducer.lang,
@@ -34,9 +40,11 @@ export default compose(
         setVoluem,
         AddCountYou,
         setMyNumber,
+        setZeroTwoHistory,
         setStatusWin,
         deleteAllStats,
         setVoluemSignal,
+        setIsOne,
         setLang,
     })
 )(GameContainer);

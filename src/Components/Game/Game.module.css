@@ -1,8 +1,6 @@
 .game {
     height: calc(100vh - 40px);
-    /*
-    background-color: rebeccapurple;
-    */
+
 
 }
 
@@ -113,5 +111,6 @@
 .hidden {
     display: none;
 }
+
 
 

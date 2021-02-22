@@ -1,0 +1,21 @@
+
+
+.GameTwoPlace {
+    height: 250px;
+    position: absolute;
+    left: calc(50% - 303px);
+    top: calc(50% - 175px);
+    display: flex;
+}
+
+@media (max-width: 775px) {
+    .GameTwoPlace {
+        left: calc(50% - 230px);
+    }
+}
+
+@media (min-height: 700px ) {
+    .GameTwoPlace {
+        top: calc(50% - 175px);
+    }
+}

@@ -12,16 +12,18 @@
 
 }
 
+
+
 .mod {
     background-color: green;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:50px;
+    top:10px;
     left:calc(50% - 100px);
     width: 200px;
-    height: 100px;
+    height: 80px;
 }
 
 .modtwo {
@@ -30,10 +32,10 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:50px;
+    top:10px;
     left:calc(50% - 100px);
     width: 200px;
-    height: 100px;
+    height: 80px;
 }
 
 .modthree {
@@ -42,10 +44,10 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:50px;
+    top:10px;
     left:calc(50% - 100px);
     width: 200px;
-    height: 100px;
+    height: 80px;
 }
 
 .h2 {
@@ -125,5 +127,23 @@
         border-radius: 50%;
     }
 
+}
+
+@media (max-width: 775px) {
+    .points {
+        top: 3.5em;
+    }
+    .mod {
+        top:2px;
+        height: 80px;
+    }
+    .modtwo {
+        top:2px;
+        height: 80px;
+    }
+    .modthree {
+        top: 2px;
+        height: 80px;
+    }
 }
 
