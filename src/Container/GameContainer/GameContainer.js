@@ -10,6 +10,7 @@ import {setMyNumber, setStatusWin} from "../../Redux/reducers/CountNumberReducer
 import {AddCountYou, deleteAllStats} from "../../Redux/reducers/StatisticReducer";
 import {setIsOne} from "../../Redux/reducers/OneTwoReducer";
 import {setZeroTwoHistory} from "../../Redux/reducers/StatisticTwoReducer";
+import {deleteAutoplayStata, editIsAutoPlay} from "../../Redux/reducers/AutoplayReducer";
 
 const GameContainer = (props) => {
 
@@ -31,6 +32,8 @@ const mapStateToProps = (state) => {
         statistics: state.StatisticsReducer.statistics,
         voluemSignal: state.MusicReducer.voluemSignal,
         lang: state.ThemReducer.lang,
+        stataAutoplay:state.AutoplayReducer.stataAutoplay,
+        isAutoplay: state.AutoplayReducer.isAutoplay,
 
     }
 };
@@ -45,6 +48,8 @@ export default compose(
         deleteAllStats,
         setVoluemSignal,
         setIsOne,
+        deleteAutoplayStata,
+        editIsAutoPlay,
         setLang,
     })
 )(GameContainer);

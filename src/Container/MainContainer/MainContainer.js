@@ -9,7 +9,6 @@ import {setComputerNumber, setMyNumber, setZeroNumber} from "../../Redux/reducer
 
 const MainContainer = (props) => {
 
-    console.log('stata', props.stata)
 
     return (
         <Main  {...props} />
@@ -20,10 +19,11 @@ const mapStateToProps = (state) => {
     return {
         myNumber: state.CountNumberReducer.myNumber,
         countYou: state.StatisticsReducer.countYou,
+        youComputerPoint: state.AutoplayReducer.youComputerPoint,
         countComputer: state.StatisticsReducer.countComputer,
         statusWin: state.CountNumberReducer.statusWin,
         isOne: state.OneTwoReducer.isOne,
-
+        enemyComputerPoint:state.AutoplayReducer.enemyComputerPoint,
         youCountTwo: state.StatisticTwoReducer.youCountTwo,
         computerCountTwo: state.StatisticTwoReducer.computerCountTwo,
         statisticTwo: state.StatisticTwoReducer.statisticTwo,

@@ -1,8 +1,7 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from "redux-thunk"
-
-
 import { persistStore, persistReducer } from 'redux-persist';
+
 import storage from 'redux-persist/lib/storage';
 import ThemReducer from "./reducers/ThemReducer";
 import MusicReducer from "./reducers/MusicReducer";
@@ -10,6 +9,7 @@ import StatisticsReducer from "./reducers/StatisticReducer";
 import CountNumberReducer from "./reducers/CountNumberReducer";
 import OneTwoReducer from "./reducers/OneTwoReducer";
 import StatisticTwoReducer from "./reducers/StatisticTwoReducer";
+import AutoplayReducer from "./reducers/AutoplayReducer";
 
 
 let reducers = combineReducers({
@@ -18,6 +18,7 @@ let reducers = combineReducers({
     StatisticsReducer,
     CountNumberReducer,
     OneTwoReducer,
+    AutoplayReducer,
     StatisticTwoReducer,
 });
 
@@ -28,6 +29,7 @@ const persistConfig = {
         'OneTwoReducer',
         'MusicReducer',
         'StatisticsReducer',
+        'AutoplayReducer',
         'StatisticTwoReducer'] // which reducer want to store
 };
 

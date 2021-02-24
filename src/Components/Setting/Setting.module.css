@@ -9,12 +9,30 @@
     margin-left: 50px;
 }
 
+.hund {
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    width: 65%;
+    text-align: center;
+}
+
 .cent {
     box-shadow: 0 9px 24px rgba(0, 0, 0, 0.01), 0 25px 40px;
     width: 500px;
     height: 500px;
     border-radius: 5px;
     background-color:#fafafa ;
+}
+
+.qu {
+    cursor:pointer;
+    position: relative;
+    top:200px;
+    left:-50px;
+    font-size: 1.5em;
 }
 
 .h1 {

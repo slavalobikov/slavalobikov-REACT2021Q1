@@ -14,8 +14,19 @@
     }
 }
 
+.darck {
+    color: #fafafa;
+}
+.gold {
+    color: gold;
+}
+
 @media (min-height: 700px ) {
     .GameTwoPlace {
         top: calc(50% - 175px);
     }
+}
+
+.GameTwoPlace div {
+    text-align: center;
 }

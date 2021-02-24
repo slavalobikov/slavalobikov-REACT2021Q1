@@ -1,6 +1,8 @@
 import React from 'react';
 import {compose} from "redux";
 import {connect} from "react-redux";
+import cn from 'classnames';
+
 
 
 import Ava from "../../../common/ava/Ava";
@@ -26,6 +28,7 @@ const GameTwoComputerTwo = ({lang,
                                 computerNumberTwo,
                                 setStatusWin,
                                 addCountYouTwo,
+                                theme,
                                 addCountComputertTwo,
                                 addMoveTwoReducer,
                                 setMus,
@@ -205,7 +208,13 @@ const GameTwoComputerTwo = ({lang,
     return (
         <div className={s.flex}>
             <div>
-                <h2>
+                <h2 className={cn(
+                    {
+                        [s.darck]: theme === 'dark',
+                        [s.ligh]: theme === 'light',
+                        [s.gold]: theme === 'gold',
+                    }
+                )}>
                     {lang === 'ru' && <span>Компьютер</span>}
                     {lang === 'eng' && <span>Computer</span>}
                 </h2>
@@ -214,7 +223,13 @@ const GameTwoComputerTwo = ({lang,
                 </div>
             </div>
             <div>
-                <h2>
+                <h2 className={cn(
+                    {
+                        [s.darck]: theme === 'dark',
+                        [s.ligh]: theme === 'light',
+                        [s.gold]: theme === 'gold',
+                    }
+                )}>
                     {lang === 'ru' && <span>Компьютер</span>}
                     {lang === 'eng' && <span>Computer</span>}
                 </h2>

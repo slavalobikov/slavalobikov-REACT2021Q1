@@ -14,7 +14,6 @@ import ReactPlayer from "react-player";
 import s from './Game.module.css'
 import Setting from "../Setting/Setting";
 import MainContainer from "../../Container/MainContainer/MainContainer";
-import {setZeroTwoHistory} from "../../Redux/reducers/StatisticTwoReducer";
 
 
 
@@ -133,8 +132,12 @@ const Game = (props) => {
             <Route path={'/setting'} render={() => <Setting voluem={props.voluem}
                                                             setLang={props.setLang}
                                                             lang={props.lang}
+                                                            stataAutoplay={props.stataAutoplay}
+                                                            isAutoplay={props.isAutoplay}
                                                             stata={props.stata}
                                                             isOne={props.isOne}
+                                                            deleteAutoplayStata={props.deleteAutoplayStata}
+                                                            editIsAutoPlay={props.editIsAutoPlay}
                                                             setIsOne={props.setIsOne}
                                                             statistics={props.statistics}
                                                             setZeroTwoHistory={props.setZeroTwoHistory}
@@ -145,7 +148,13 @@ const Game = (props) => {
                                                             deleteAllStats={props.deleteAllStats}
                                                             setTheme={props.setTheme} />} />
             <Route path={'/'} exact render={() => <MainContainer
-                name={props.name} lang={props.lang} setMus={setMus} isMusic={isMusic} setIsMusic={setIsMusic} />} />
+                name={props.name}
+                lang={props.lang}
+                theme={props.theme}
+                isAutoplay={props.isAutoplay}
+                setMus={setMus}
+                isMusic={isMusic}
+                setIsMusic={setIsMusic} />} />
 
 
 

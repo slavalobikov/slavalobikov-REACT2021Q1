@@ -10,6 +10,8 @@ import {
     addYouChoose
 } from "../../../Redux/reducers/StatisticReducer";
 import {setStatusWin} from "../../../Redux/reducers/CountNumberReducer";
+import cn from "classnames";
+import s from "../../Main/Main.module.css";
 
 const ComputerPlace = ({myNumber,
                            addMove,
@@ -17,6 +19,7 @@ const ComputerPlace = ({myNumber,
                            addComputerChoose,
                            AddCountComputer,
                            setMus,
+                           theme,
                            lang,
                            setZeroNumber,
                            addYouChoose,
@@ -121,7 +124,14 @@ const ComputerPlace = ({myNumber,
 
     return (
         <div>
-            <h2>
+            <h2 className={cn(
+                {
+                    [s.darck]: theme === 'dark',
+                    [s.ligh]: theme === 'light',
+                    [s.gold]: theme === 'gold'
+                }
+
+            )}>
                 {lang === 'ru' && <span>Компьютер</span>}
                 {lang === 'eng' && <span>Computer</span>}
             </h2>
