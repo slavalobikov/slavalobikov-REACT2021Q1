@@ -22,7 +22,6 @@ const Footer = () => {
                 2021 year
             </div>
             <div>
-
                 <a href="https://www.youtube.com/watch?v=YYWCCQxTUwA">
                     Link to youtube
                 </a>
