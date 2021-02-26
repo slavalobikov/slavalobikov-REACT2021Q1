@@ -18,6 +18,7 @@ const GamePlaceAutoplay = ({
                                lang,
                                computerNumber,
                                setZeroInfo,
+                               setMus,
                                addMoveInHistoryAutoplay,
                                addMove,
                                 theme,
@@ -36,6 +37,7 @@ const GamePlaceAutoplay = ({
     const winFunc = () => {
         setStatusWin('win')
         addYouComputerPoint()
+        setMus(true)
         addMoveInHistoryAutoplay(youNumber, computerNumber, 'win')
     }
     const noWinNoLoseFunc = () => {

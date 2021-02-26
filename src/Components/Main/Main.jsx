@@ -80,6 +80,7 @@ const Main = ({
                                         </div>
 
                                         <GamePlaceAutoplay youEng={'Your computer'}
+                                                           setMus={setMus}
                                                            theme={theme}
                                                            EnemyEng={'Enemy computer'}
                                                            EnemyRu={'Компьютер противника'}
