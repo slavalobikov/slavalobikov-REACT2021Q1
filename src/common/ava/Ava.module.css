@@ -1,0 +1,31 @@
+.ava {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.stone img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.icon {
+    font-size: 3em;
+}
+
+@media (max-width: 775px) {
+    .ava {
+        width:150px;
+        height: 150px;
+    }
+
+    .stone img {
+        width:150px;
+        height: 150px;
+    }
+}
